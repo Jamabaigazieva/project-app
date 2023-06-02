@@ -10,7 +10,6 @@ env:
   PROJECT_ID: glossy-infinity-382611
   GAR_LOCATION: us-central1
   REPOSITORY: jama-repo-project
-  IMAGE: main
 
 jobs:
   login-build-push:
