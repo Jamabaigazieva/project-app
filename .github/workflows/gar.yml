@@ -22,12 +22,12 @@ jobs:
         uses: google-github-actions/setup-gcloud@v0.4.0
         with:
           project_id: ${{ env.PROJECT_ID }}
-          service_account_key: ${{ secrets.GCP_KEY }}
+          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
           export_default_credentials: true
 
       - name: Configure Docker
         run: |
-          echo ${{ secrets.GCP_KEY }} | base64 -d > /tmp/gcp-key.json
+          echo ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }} | base64 -d > /tmp/gcp-key.json
           gcloud auth activate-service-account --key-file=/tmp/gcp-key.json
           gcloud auth configure-docker
 
